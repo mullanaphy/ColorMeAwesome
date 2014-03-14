@@ -20,6 +20,7 @@ RequireJS:
 require(['colormeawesome'], function(ColorMeAwesome) {
     var colors = new ColorMeAwesome(['#ffffff', '#000000'], 100);
 });
+```
 
 Node:
 ```javascript
@@ -82,7 +83,7 @@ All Accessible Methods
 ----------------------
 
 Method | Parameters | Returns | Description
---- | --- | ---
+--- | --- | --- | ---
 `constructor` | `Array colors ['#ffffff', '#000000']`, `Number|Array steps 10` | `ColorMeAwesome` | When initializing you can send along your colors and steps.
 `setColors` | `Array colors` | `ColorMeAwesome` | At any point you can change your colors, however this will call `empty`.
 `setSteps` | `Number|Array steps` | `ColorMeAwesome` | At any point you can change your steps, however this will call `empty`.
