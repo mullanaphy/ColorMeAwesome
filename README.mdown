@@ -112,5 +112,5 @@ That's it for now...
 License
 -------
 
-PHY\PHY is licensed under the Open Software License (OSL 3.0) -
+ColorMeAwesome is licensed under the Open Software License (OSL 3.0) -
 see the `LICENSE` file for details
