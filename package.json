@@ -1,0 +1,22 @@
+{
+    "author": "John Mullanaphy <john@jo.mu> (http://jo.mu/)",
+    "name": "ColorMeAwesome",
+    "description": "Create a color range between two colors while specifying the steps.",
+    "version": "0.0.1",
+    "homepage": "https://github.com/mullanaphy/ColorMeAwesome",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mullanaphy/ColorMeAwesome.git"
+    },
+    "main": "",
+    "engines": {
+        "node": ">=0.0.1"
+    },
+    "dependencies": {},
+    "devDependencies": {},
+    "bugs": "https://github.com/mullanaphy/ColorMeAwesome/issues",
+    "licenses": {
+        "type": "Open Software License (OSL 3.0)",
+        "url": "https://github.com/mullanaphy/ColorMeAwesome/blob/master/LICENSE"
+    }
+}

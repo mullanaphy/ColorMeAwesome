@@ -1,0 +1,115 @@
+ColorMeAwesome - Creating gradients between 2+ colors.
+================================================================================
+
+
+This sucker was made for one of my work projects that has colors for 0-100%.
+Some needed the colors to go from red -> yellow -> green and others needed the
+opposite. To add to that, some also needed greater weights between the colors
+used so I ended up writing this in an evening and quite pleased with it getting
+the job done.
+
+Loading
+-------
+
+Loading is available either frontend or backend and is AMD supported. If you
+have CommonJS/RequireJS/Equivalent then it'll be ready to go. Otherwise it'll
+assign itself to the global namespace as ColorMeAwesome.
+
+RequireJS:
+```javascript
+require(['colormeawesome'], function(ColorMeAwesome) {
+    var colors = new ColorMeAwesome(['#ffffff', '#000000'], 100);
+});
+
+Node:
+```javascript
+var ColorMeAwesome = require('path/to/colormeawesome');
+var colors = new ColorMeAwesome(['#ffffff', '#000000'], 100);
+```
+
+Plain:
+```javascript
+<script src="path/to/colormeawesome.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var colors = new ColorMeAwesome(['#ffffff', '#000000'], 100);
+</script>
+```
+
+Usage
+-----
+
+Using it is simple enough. Just passing the data along to the constructor will
+be all that you need to get colors, yet there are some open methods as well.
+
+Basic Example:
+```javascript
+/*
+ * Create a white to gray to black gradient in 20 steps.
+ */
+var colors = new ColorMeAwesome(['#ffffff', '#cccccc', '#000000'], 20);
+
+/*
+ * Note, until you actually use the colors nothing gets generated, and after
+ * generating colors either by using getGeneratedColors or one of the point
+ * access methods then resetting your colors to use or steps to take will
+ * reset them.
+ */
+console.log(colors.getGeneratedColors());
+console.log(colors.getColorByPercent(25));
+console.log(colors.getColorByStep(5));
+```
+
+Notice, by having step be an integer ColorMeAwesome will try and make even
+zones between all colors used and any left over (modulus) will go into the
+last zone. So in the above example, the first zone is 8 steps, and the second
+one is 9 steps plus the 3 colors used to give us all 20 steps.
+
+Instead, you can also give different weights like so:
+```javascript
+/*
+ * This time we're created weighted steps. In total this will give us 25
+ * steps, which that 25 includes the 3 colors used. Note, steps.length is
+ * colors.length - 1.
+ */
+var colors = new ColorMeAwesome(['#ffffff', '#cccccc', '#000000'], [5, 20]);
+
+console.log(colors.getGeneratedColors());
+console.log(colors.getColorByPercent(25));
+console.log(colors.getColorByStep(5));
+```
+
+All Accessible Methods
+----------------------
+
+Method | Parameters | Returns | Description
+--- | --- | ---
+`constructor` | `Array colors ['#ffffff', '#000000']`, `Number|Array steps 10` | `ColorMeAwesome` | When initializing you can send along your colors and steps.
+`setColors` | `Array colors` | `ColorMeAwesome` | At any point you can change your colors, however this will call `empty`.
+`setSteps` | `Number|Array steps` | `ColorMeAwesome` | At any point you can change your steps, however this will call `empty`.
+`reset` | | `ColorMeAwesome` | Reset will put everything back to a default state.
+`empty` | | `ColorMeAwesome` | This will empty out our generated results.
+`getColors` | | `Array colors` | Get our color points that we're going to use.
+`getSteps` | | `Number|Array steps` | Get our steps whether it's an array or number.
+`getGeneratedColors` | | `Array generatedColors` | Get an array back of all of our generated colors.
+`getColorByStep` | `Number step` | `String` | Get a given color at a step. If your step is out of bounds it'll use the min or max.
+`getColorByPercent` | `Number percent` | `String` | Same as by step, yet instead uses a percent of 0-100.
+`getNumberOfSteps` | | `Number numberOfSteps` | Returns our total number of steps that we're going to be taking.
+`isWeighted` | | `Boolean weighted` | Returns true if we're using weighted zones.
+
+Submitting bugs and feature requests
+------------------------------------
+
+Please send bugs to me via
+[GitHub](https://github.com/mullanaphy/ColorMeAwesome/issues)
+
+Author
+------
+
+John Mullanaphy - <john@jo.mu> - <http://jo.mu/>
+That's it for now...
+
+License
+-------
+
+PHY\PHY is licensed under the Open Software License (OSL 3.0) -
+see the `LICENSE` file for details
