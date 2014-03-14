@@ -1,8 +1,8 @@
 {
     "name": "ColorMeAwesome",
-    "version": "0.0.1",
-    "main": "colorMeAwesome.js",
+    "version": "1.0.0",
+    "main": "colormeawesome.js",
     "ignore": [
-        "README.md"
+        "README.mdown"
     ]
 }
