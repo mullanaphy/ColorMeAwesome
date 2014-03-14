@@ -84,13 +84,13 @@ All Accessible Methods
 
 Method | Parameters | Returns | Description
 --- | --- | --- | ---
-`constructor` | `Array colors ['#ffffff', '#000000']`, `Number|Array steps 10` | `ColorMeAwesome` | When initializing you can send along your colors and steps.
+`constructor` | `Array colors ['#ffffff', '#000000']`, `Number or Array steps 10` | `ColorMeAwesome` | When initializing you can send along your colors and steps.
 `setColors` | `Array colors` | `ColorMeAwesome` | At any point you can change your colors, however this will call `empty`.
-`setSteps` | `Number|Array steps` | `ColorMeAwesome` | At any point you can change your steps, however this will call `empty`.
+`setSteps` | `Number or Array steps` | `ColorMeAwesome` | At any point you can change your steps, however this will call `empty`.
 `reset` | | `ColorMeAwesome` | Reset will put everything back to a default state.
 `empty` | | `ColorMeAwesome` | This will empty out our generated results.
 `getColors` | | `Array colors` | Get our color points that we're going to use.
-`getSteps` | | `Number|Array steps` | Get our steps whether it's an array or number.
+`getSteps` | | `Number or Array steps` | Get our steps whether it's an array or number.
 `getGeneratedColors` | | `Array generatedColors` | Get an array back of all of our generated colors.
 `getColorByStep` | `Number step` | `String` | Get a given color at a step. If your step is out of bounds it'll use the min or max.
 `getColorByPercent` | `Number percent` | `String` | Same as by step, yet instead uses a percent of 0-100.
