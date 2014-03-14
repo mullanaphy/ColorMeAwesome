@@ -53,8 +53,8 @@ this.ColorMeAwesomeTests = {
     'Test getColorByStep': function(test) {
         var colors = new ColorMeAwesome(['#ffffff', '#000000'], 40);
         test.ok(colors.getColorByStep(0) === '#ffffff', 'Got min color by step');
-        test.ok(colors.getColorByStep(40) === '#000000', 'Got min color by out of bounds step');
-        test.ok(colors.getColorByStep(-1) === '#ffffff', 'Got max color by step');
+        test.ok(colors.getColorByStep(40) === '#000000', 'Got max color by step');
+        test.ok(colors.getColorByStep(-1) === '#ffffff', 'Got min color by out of bounds step');
         test.ok(colors.getColorByStep(41) === '#000000', 'Got max color by out of bounds step');
         test.ok(colors.getColorByStep(1) === '#f8f8f8', 'Got second color by step');
     },
@@ -65,8 +65,8 @@ this.ColorMeAwesomeTests = {
     'Test getColorByPercent': function(test) {
         var colors = new ColorMeAwesome(['#ffffff', '#000000'], 40);
         test.ok(colors.getColorByPercent(0) === '#ffffff', 'Got min color by percent');
-        test.ok(colors.getColorByPercent(100) === '#000000', 'Got min color by out of bounds percent');
-        test.ok(colors.getColorByPercent(-1) === '#ffffff', 'Got max color by percent');
+        test.ok(colors.getColorByPercent(100) === '#000000', 'Got max color by percent');
+        test.ok(colors.getColorByPercent(-1) === '#ffffff', 'Got min color by out of bounds percent');
         test.ok(colors.getColorByPercent(101) === '#000000', 'Got max color by out of bounds percent');
         test.ok(colors.getColorByPercent(25) === '#c4c4c4', 'Got 25% color');
     },
