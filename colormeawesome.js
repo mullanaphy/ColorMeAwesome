@@ -70,10 +70,13 @@
             b: (max.b - min.b) / iterationSteps
         };
         for (var i = 1; i <= iterationSteps; ++i) {
+            var r = (Math.floor(min.r + (steps.r * i)).toString(16));
+            var g = (Math.floor(min.g + (steps.g * i)).toString(16));
+            var b = (Math.floor(min.b + (steps.b * i)).toString(16));
             c.generated.push('#' + [
-                (Math.floor(min.r + (steps.r * i)).toString(16)) || '00',
-                (Math.floor(min.g + (steps.g * i)).toString(16)) || '00',
-                (Math.floor(min.b + (steps.b * i)).toString(16)) || '00'
+                r != '0' ? r : '00',
+                g != '0' ? g : '00',
+                b != '0' ? b : '00'
             ].join(''));
         }
     };
