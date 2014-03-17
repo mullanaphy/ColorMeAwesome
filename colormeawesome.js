@@ -164,7 +164,7 @@
         this.weighted = isArray(steps);
         if (this.weighted) {
             this.steps = steps;
-            this.numberOfSteps = 0;
+            this.numberOfSteps = 1;
             for (var i = 0, count = this.steps.length; i < count; ++i) {
                 this.numberOfSteps += this.steps[i];
             }
