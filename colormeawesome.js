@@ -222,7 +222,7 @@
     /**
      * Get a color at a given step.
      *
-     * @param step
+     * @param {Number} step
      * @returns {*}
      */
     ColorMeAwesome.prototype.getColorByStep = function(step) {
@@ -239,7 +239,7 @@
     /**
      * Get a color based on percentage.
      *
-     * @param percent
+     * @param {Number} percent
      * @returns {*}
      */
     ColorMeAwesome.prototype.getColorByPercent = function(percent) {
