@@ -96,9 +96,10 @@
         var colorZones = colorsLength - 1;
         var totalSteps = c.steps - colorsLength;
         var stepsPerZone = Math.floor(totalSteps / colorZones) + 1;
-        var lastZone = totalSteps % colorZones;
+        var leftoverSteps = totalSteps % colorZones;
+        var extraStep = stepsPerZone - leftoverSteps - 1;
         for (var i = 0; i < colorZones; ++i) {
-            generate.zone(c, colors[i], colors[i + 1], stepsPerZone + (i === colorZones - 1 ? lastZone : 0));
+            generate.zone(c, colors[i], colors[i + 1], stepsPerZone + (i <= extraStep ? 1 : 0));
         }
     };
 

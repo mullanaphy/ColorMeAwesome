@@ -73,5 +73,11 @@ this.ColorMeAwesomeTests = {
     'Test getColorByPercent weighted': function(test) {
         var colors = new ColorMeAwesome(['#0000ff', '#ffff00', '#ff0000', '#00ff00'], [20, 40, 60]);
         test.ok(colors.getColorByPercent(25) === '#ffc500', 'Got 25% color weighted');
+    },
+    'Test getGeneratedColors': function(test) {
+        var colors = new ColorMeAwesome(['#ffffff', '#000000'], 3);
+        var generated = colors.getGeneratedColors();
+        test.ok(generated.length === 3, 'We have 3 generated colors');
+        test.ok(generated[1] === '#cccccc', 'Our middle color is correct');
     }
 };
